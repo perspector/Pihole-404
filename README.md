@@ -41,7 +41,7 @@ And everything should work!
 This will start the program in the background.
 Any time you shutdown or restart, you also must run this command.
 If the Raspberry Pi updates, you may need to run the installer script again since the file /etc/lighttpd/lighttpd.conf is changed. The installer script should fix this.\
-**_Note: This script sets blocking mode to IP blocking. If you want to change this, just edit /etc/pihole/pihole-FTL.conf and set blocking mode to NULL ._**
+##### _Note: This script sets blocking mode to IP blocking. If you want to change this, just edit /etc/pihole/pihole-FTL.conf and set blocking mode to NULL ._
 
 ## Credits:
 * Everyone at [pi-hole](https://pi-hole.net) ([Github](https://github.com/pi-hole/pi-hole))
