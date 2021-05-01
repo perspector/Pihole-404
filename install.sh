@@ -63,7 +63,7 @@ sudo service lighttpd restart
 #    sudo echo "BLOCKINGMODE=IP" >> /etc/pihole/pihole-FTL.conf
 #fi
 # Changes blocking mode of pihole to IP by adding is line to the file
-sudo echo "BLOCKINGMODE=IP" >> /etc/pihole/pihole-FTL.conf
+echo "BLOCKINGMODE=IP" | sudo tee -a /etc/pihole/pihole-FTL.conf
 
 sudo service pihole-FTL restart
 
