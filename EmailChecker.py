@@ -16,6 +16,8 @@ with MailBox('imap.gmail.com').login("someone@example.com", "PASSWORD", initial_
         mailbox.folder.create('PiHoleWhitelist')
     # Moves email to PiHoleWhitelist folder to avoid a cluttered Inbox
     mailbox.move(mailbox.fetch(AND(subject='Domain Blocked')), 'PiHoleWhitelist')
+    
+    # tries to format email correctly
     try:
         body = body[0]
         body = body.replace("\r\n", "")
@@ -23,6 +25,8 @@ with MailBox('imap.gmail.com').login("someone@example.com", "PASSWORD", initial_
         body = body.replace("http://", "")
         if body[-1] == "/":
             body = body[:-1]
+        # executes command to whitelist domain
         os.system("pihole -w " + body)
+    # Error will be thrown if no email is available, this just passes it silently
     except IndexError:
          sleep(0.5)
