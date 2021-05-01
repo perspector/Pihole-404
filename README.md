@@ -45,6 +45,8 @@ If the Raspberry Pi updates, you may need to run the installer script again.
 ## Credits:
 * Everyone at [pi-hole](https://pi-hole.net) ([Github](https://github.com/pi-hole/pi-hole))
 * [This](https://www.reddit.com/r/pihole/comments/a9v7jj/how_to_install_a_custom_block_page_for_websites/) Reddit post which was incredibly useful
+* *imap-tools* python package, found [here at pypi](https://pypi.org/project/imap-tools/), used for processing emails
+* [Python3](https://python.org), a phonomenal programming language everyone should know
 * [The Raspberry Pi Foundation](https://raspberrypi.org) for making awesome little computers
 * Wallpaperflare for amazing images ([Astronaut](https://www.wallpaperflare.com/astronaut-clipart-space-monochrome-artwork-copy-space-close-up-wallpaper-ppoyl), [Moon](https://www.wallpaperflare.com/minimalism-space-black-background-artwork-simple-background-wallpaper-pmmgi))
 * [Pixlr E](https://pixlr.com/e/) for great online photo editing
