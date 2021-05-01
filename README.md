@@ -31,5 +31,6 @@ And everything should work!\
 * Everyone at [pi-hole](https://pi-hole.net) ([Github](https://github.com/pi-hole/pi-hole))
 * [This](https://www.reddit.com/r/pihole/comments/a9v7jj/how_to_install_a_custom_block_page_for_websites/) Reddit post which was incredibly useful
 * [The Raspberry Pi Foundation](https://raspberrypi.org) for making awesome little computers
+* Wallpaperflare for amazing images ([Astronaut](https://www.wallpaperflare.com/astronaut-clipart-space-monochrome-artwork-copy-space-close-up-wallpaper-ppoyl), [Moon](https://www.wallpaperflare.com/minimalism-space-black-background-artwork-simple-background-wallpaper-pmmgi))
 
 ### If you find this repo useful, please star it and share it! If you have questions, just create an [issue](https://github.com/BennyThePythonCoder/Pihole-404/issues).
