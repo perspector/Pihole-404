@@ -57,6 +57,38 @@ sudo service lighttpd restart
 # More details can be found at https://docs.pi-hole.net/ftldns/blockingmode/
 echo "BLOCKINGMODE=IP" | sudo tee -a /etc/pihole/pihole-FTL.conf
 
+That change will duplicate BLOCKINGMODE if it already exists and that will break things.
+
+What you need are three conditions:
+
+    File doesn't exit.
+    File exists without a BLOCKINGMODE line
+    FIle exists with a BLOCKINGMODE line that isn't IP.
+
+FILE=/etc/pihole/pihole-FTL.conf
+if [ -f "$FILE" ]; then
+    # File exists
+    if grep -q "BLOCKINGMODE" $FILE
+    then
+      # If BLOCKINGMODE line is present
+      if grep -q "=IP" $FILE
+      then
+        # If BLOCKINGMODE is set to IP
+        continue
+      else
+        # IF BLOCKINGMODE is present but not set to IP
+        sed -i 's/.*BLOCKINGMODE.*/BLOCKINGMODE=IP/' $FILE
+      fi
+    else
+      # If BLOCKINGMODE line is not present
+      echo "BLOCKINGMODE=IP" | sudo tee -a $FILE
+    fi
+else 
+    # File does not exist
+    touch $FILE
+    echo "BLOCKINGMODE=IP" | sudo tee -a $FILE
+fi
+
 sudo service pihole-FTL restart
 
 ### Start Email Checker program in background, make it check email every 10 seconds
