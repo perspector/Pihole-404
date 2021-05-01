@@ -27,6 +27,8 @@ _^Above: This is what your 404 page will look like! Of course, feel free to cust
 ## Step 3: Set up the Repo and Install
 &emsp; On the Raspberry Pi, Clone this repository:\
     git clone https://github.com/BennyThePythonCoder/Pihole-404.git \
+    EXAMPLE
+`EXAMPLE2`
 Navigate to the project folder:\
     cd Pihole-404 \
 or wherever the repo folder was installed if you installed it in a different location.\
