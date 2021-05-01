@@ -10,7 +10,7 @@ _^Above: This is what your 404 page will look like! Of course, feel free to cust
 * [Step 1](#step-1)
 * [Step 2](#step-2)
 * [Step 3](#step-3)
-* [Known Bugs](#known-issues/bugs)
+* [Known Bugs](#known-issuesbugs)
 * [Credits](#credits)
 
 ## The Problem:
