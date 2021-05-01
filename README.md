@@ -19,13 +19,13 @@ _^Above: This is what your 404 page will look like! Of course, feel free to cust
 &emsp; Pihole-404 to the rescue! This simple script will add a button that lets you email the admin. This email will be read by an automatic python script and the domain will be whitelisted! And on top of all that, it makes the 404 page look very nice!
 
 ## Step 1: Install Pihole and Get it Working
-&esmp; Head over to https://github.com/pi-hole/pi-hole
+&emsp; Head over to https://github.com/pi-hole/pi-hole
 
 ## Step 2: Enable Less Secure App Access
-&esmp; If you are using Gmail, you need to enable less secure app access to your google account [here](https://myaccount.google.com/lesssecureapps). I am not sure about other providers as I have not tried them.
+&emsp; If you are using Gmail, you need to enable less secure app access to your google account [here](https://myaccount.google.com/lesssecureapps). I am not sure about other providers as I have not tried them.
 
 ## Step 3: Set up the Repo and Install
-&esmp; On the Raspberry Pi, Clone this repository:\
+&emsp; On the Raspberry Pi, Clone this repository:\
     git clone https://github.com/BennyThePythonCoder/Pihole-404.git \
 Navigate to the project folder:\
     cd Pihole-404 \
@@ -35,7 +35,7 @@ Run the installer script:\
 And everything should work!\
 
 ## Known Issues/Bugs
-&esmp; When using SSH to access the Raspberry Pi, the email checker program may be stopped when exitting SSH. If this happens, just log on to the Raspberry Pi through HDMI and a keyboard. Then go to the folder you cloned this repo in using `cd` type:\
+&emsp; When using SSH to access the Raspberry Pi, the email checker program may be stopped when exitting SSH. If this happens, just log on to the Raspberry Pi through HDMI and a keyboard. Then go to the folder you cloned this repo in using `cd` type:\
     watch -n 10 python3 EmailChecker.py & \
 This will start the program in the background.\
 Any time you shutdown or restart, you also must run this command.\
