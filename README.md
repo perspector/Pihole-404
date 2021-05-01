@@ -25,3 +25,8 @@ Navigate to the project folder:
 Run the installer script:
 `sudo sh install.sh`
 And everything should work!
+
+## Credits:
+* Everyone at [pihole](https://pihole.net)([Github](https://github.com/pi-hole/pi-hole))
+* [This](https://www.reddit.com/r/pihole/comments/a9v7jj/how_to_install_a_custom_block_page_for_websites/) Reddit post which was incredibly useful
+* [The Raspberry Pi Foundation](https://raspberrypi.org) for making awesome little computers
