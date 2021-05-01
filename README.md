@@ -19,13 +19,13 @@ _^Above: This is what your 404 page will look like! Of course, feel free to cust
 Head over to https://github.com/pi-hole/pi-hole
 
 ## Step 2: 
-Clone this repository:
-`git clone https://github.com/BennyThePythonCoder/Pihole-404.git`
-Navigate to the project folder:
-`cd /Downloads/Pihole-404/`
-Run the installer script:
-`sudo sh install.sh`
-And everything should work!
+Clone this repository:\
+`git clone https://github.com/BennyThePythonCoder/Pihole-404.git`\
+Navigate to the project folder:\
+`cd /Downloads/Pihole-404/`\
+Run the installer script:\
+`sudo sh install.sh`\
+And everything should work!\
 
 ## Credits:
 * Everyone at [pi-hole](https://pi-hole.net) ([Github](https://github.com/pi-hole/pi-hole))
