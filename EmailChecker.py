@@ -6,7 +6,7 @@ from time import sleep
 import os
 
 # gets list of email subjects from INBOX folder
-with MailBox('imap.gmail.com').login("someone@example.com", "PASSWORD", initial_folder='INBOX') as mailbox:
+with MailBox('imap.example.com').login("someone@example.com", "PASSWORD", initial_folder='INBOX') as mailbox:
     body = [msg.text for msg in mailbox.fetch(AND(subject='Domain Blocked'))]
     
     # Checkes if the folder PiHoleWhitelist exists
