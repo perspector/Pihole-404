@@ -33,7 +33,7 @@ Navigate to the project folder:
 or wherever the repo folder was installed if you installed it in a different location.\
 Run the installer script:
 #### `sudo sh install.sh`
-And everything should work!
+Test the script (http://doubleclick.net)
 
 ## Known Issues/Bugs
 &emsp; The script only works for http websites, not https/tls 😢.\
