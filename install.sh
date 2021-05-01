@@ -55,17 +55,8 @@ sudo service lighttpd restart
 
 ### Changes blocking mode to IP in /etc/pihole/pihole-FTL.conf . This will make the custom 404 page display.
 # More details can be found at https://docs.pi-hole.net/ftldns/blockingmode/
-echo "BLOCKINGMODE=IP" | sudo tee -a /etc/pihole/pihole-FTL.conf
-
-That change will duplicate BLOCKINGMODE if it already exists and that will break things.
-
-What you need are three conditions:
-
-    File doesn't exit.
-    File exists without a BLOCKINGMODE line
-    FIle exists with a BLOCKINGMODE line that isn't IP.
-
 FILE=/etc/pihole/pihole-FTL.conf
+
 if [ -f "$FILE" ]; then
     # File exists
     if grep -q "BLOCKINGMODE" $FILE
