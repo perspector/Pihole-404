@@ -49,15 +49,18 @@ sed -i 's:server.error-handler-404    = "/pihole/index.php/":server.error-handle
 echo "[✓] Changed configuration file for lighttpd located at /etc/lighttpd/lighttpd.conf"
 sudo service lighttpd restart
 
-### Checks if /etc/pihole/pihole-FTL.conf exists. If it does, changes the blocking mode to IP instead of default NULL in config file at /etc/pihole/pihole-FTL.conf
-FILE=/etc/pihole/pihole-FTL.conf
-if [ -f "$FILE" ]; then
-    # File exists
-    sed -i 's/NULL/IP/gi' /etc/pihole/pihole-FTL.conf
-else 
-    # File does not exist
-    sudo echo "BLOCKINGMODE=IP" >> /etc/pihole/pihole-FTL.conf
-fi
+#### Checks if /etc/pihole/pihole-FTL.conf exists. If it does, changes the blocking mode to IP instead of default NULL in config file at /etc/pihole/pihole-FTL.conf
+#FILE=/etc/pihole/pihole-FTL.conf
+#if [ -f "$FILE" ]; then
+#    # File exists
+#    sed -i 's/NULL/IP/gi' /etc/pihole/pihole-FTL.conf
+#else 
+#    # File does not exist
+#    sudo echo "BLOCKINGMODE=IP" >> /etc/pihole/pihole-FTL.conf
+#fi
+# Changes blocking mode of pihole to IP by adding is line to the file
+sudo echo "BLOCKINGMODE=IP" >> /etc/pihole/pihole-FTL.conf
+
 sudo service pihole-FTL restart
 
 ### Start Email Checker program in background, make it check email every 10 seconds
