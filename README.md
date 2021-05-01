@@ -28,19 +28,19 @@ If you are using Gmail, you need to enable less secure app access to your google
 ## Step 3: Set up the Repo and Install
 On the Raspberry Pi, Clone this repository:
 #### `git clone https://github.com/BennyThePythonCoder/Pihole-404.git`
-Navigate to the project folder:\
+Navigate to the project folder:
 #### `cd Pihole-404`
 or wherever the repo folder was installed if you installed it in a different location.\
-Run the installer script:\
+Run the installer script:
 #### `sudo sh install.sh`
-And everything should work!\
+And everything should work!
 
 ## Known Issues/Bugs
-&emsp; When using SSH to access the Raspberry Pi, the email checker program may be stopped when exitting SSH. If this happens, just log on to the Raspberry Pi through HDMI and a keyboard. Then go to the folder you cloned this repo in using `cd` type:\
+&emsp; When using SSH to access the Raspberry Pi, the email checker program may be stopped when exitting SSH. If this happens, just log on to the Raspberry Pi through HDMI and a keyboard. Then go to the folder you cloned this repo in using `cd` type:
 #### `watch -n 10 python3 EmailChecker.py &`
-This will start the program in the background.\
-Any time you shutdown or restart, you also must run this command.\
-If the Raspberry Pi updates, you may need to run the installer script again.\
+This will start the program in the background.
+Any time you shutdown or restart, you also must run this command.
+If the Raspberry Pi updates, you may need to run the installer script again.
 
 ## Credits:
 * Everyone at [pi-hole](https://pi-hole.net) ([Github](https://github.com/pi-hole/pi-hole))
