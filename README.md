@@ -2,7 +2,7 @@
 A nice 404 page for pihole with an acompanying automatic script that can be used to whitelist the domain with the click of a button.
 
 ![This is what your 404 page will look like. Of course, you can also customize it.](./Screenshot.png)
-__^Above: This is what your 404 page will look like! Of course, feel free to customize it.__
+_^Above: This is what your 404 page will look like! Of course, feel free to customize it._
 
 ## Table of Contents
 * [The Problem](#the-problem)
