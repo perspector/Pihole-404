@@ -36,7 +36,7 @@ Run the installer script:
 And everything should work!
 
 ## Known Issues/Bugs
-&emsp; The script only works for http websites, not https (sadly).\
+&emsp; The script only works for http websites, not https/tls (sadly).\
 &emsp; When using SSH to access the Raspberry Pi, the email checker program may be stopped when exitting SSH.\
 If this happens, just log on to the Raspberry Pi through HDMI and a keyboard.\
 Then go to the folder you cloned this repo in using `cd` Type:
