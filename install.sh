@@ -49,7 +49,7 @@ sed -i 's:server.error-handler-404    = "/pihole/index.php/":server.error-handle
 echo "[✓] Changed configuration file for lighttpd located at /etc/lighttpd/lighttpd.conf"
 sudo service lighttpd restart
 
-### Changes the blocking mode to IP insteado of default NULL in config file at /etc/pihole/pihole-FTL.conf
+### Changes the blocking mode to IP insteado of default "" in config file at /etc/pihole/pihole-FTL.conf
 sed -i 's/BLOCKINGMODE=/BLOCKINGMODE=IP/gi' /etc/pihole/pihole-FTL.conf
 sudo service pihole-FTL restart
 
