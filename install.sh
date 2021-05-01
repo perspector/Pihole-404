@@ -3,8 +3,8 @@
 # THIS SCRIPT MUST BE RUN WITH SUPERUSER PERMISSIONS! USE sudo !
 
 # cool 404 text
-apt-get install figlet lolcat
-figlet Pihole-404 | lolcat
+apt-get install figlet lolcat cowsay
+figlet "Pihole-404" | cowsay -f tux -n | lolcat -p 0.5 
 
 # Installs dependency for the Python script
 pip3 install imap-tools
