@@ -2,6 +2,10 @@
 
 # THIS SCRIPT MUST BE RUN WITH SUPERUSER PERMISSIONS! USE sudo !
 
+# cool 404 text
+apt-get install figlet lolcat
+figlet Pihole-404 | lolcat
+
 # Installs dependency for the Python script
 pip3 install imap-tools
 echo "[✓] Installed dependency"
