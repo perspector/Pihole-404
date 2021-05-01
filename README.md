@@ -19,7 +19,10 @@ _^Above: This is what your 404 page will look like! Of course, feel free to cust
 ## Step 1: Install Pihole and Get it Working
 Head over to https://github.com/pi-hole/pi-hole
 
-## Step 2: 
+## Step 2: Enable Less Secure App Access
+If you are using Gmail, you need to enable less secure app access to your google account [here](https://myaccount.google.com/lesssecureapps). I am not sure about other providers as I have not tried them.
+
+## Step 3: 
 Clone this repository:\
 `git clone https://github.com/BennyThePythonCoder/Pihole-404.git`\
 Navigate to the project folder:\
