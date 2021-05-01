@@ -50,7 +50,7 @@ echo "[✓] Changed configuration file for lighttpd located at /etc/lighttpd/lig
 sudo service lighttpd restart
 
 ### Changes the blocking mode to IP insteado of default NULL in config file at /etc/pihole/pihole-FTL.conf
-sed -i 's/NULL/IP/gi' /etc/pihole/pihole-FTL.conf
+sed -i 's/BLOCKINGMODE=/BLOCKINGMODE=IP/gi' /etc/pihole/pihole-FTL.conf
 sudo service pihole-FTL restart
 
 ### Start Email Checker program in background, make it check email every 10 seconds
