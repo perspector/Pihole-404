@@ -36,16 +36,16 @@ fi
 #fi
 
 ### Updates Email info in files
-if [[ "$email" != "" && "$password" != "" ]]; then
+if [ "$email" != "" ] && [ "$password" != "" ]; then
 sed -i "s/someone@example.com/$email/gi" $emailfile
 sed -i "s/PASSWORD/$password/gi" $emailfile
 sed -i "s/imap.example.com/$provider/gi" $emailfile
 sed -i "s/someone@example.com/$email/gi" $phpfile
+echo "[✓] Changed email credentials"
 else
 echo You did not enter an email or password, stopping program
 exit
 fi
-echo "[✓] Changed email credentials"
 
 ### Copy webpage PHP file to correct location
 sudo cp CustomBlockPage.php /var/www/html/pihole/CustomBlockPage.php
