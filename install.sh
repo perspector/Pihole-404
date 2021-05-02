@@ -4,7 +4,7 @@
 
 # cool 404 text
 apt-get install figlet lolcat cowsay
-figlet "Pihole-404" | cowsay -f tux -n | lolcat -p 0.5 
+figlet "Pihole-404" | cowsay -f tux -n | lolcat -p 1.75 -S 45
 
 # Installs dependency for the Python script
 pip3 install imap-tools
