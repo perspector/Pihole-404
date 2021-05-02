@@ -5,7 +5,7 @@
 # cool "Pihole-404" text
 apt-get install figlet cowsay lolcat
 clear
-figlet "Pihole-404" | lolcat -p 1.75 -S 45 -f | cowsay -f tux -n
+figlet -f slant "Pihole-404" | lolcat -p 1.75 -S 45 -f | cowsay -f tux -n 
 
 # Installs dependency for the Python script
 pip3 install imap-tools
@@ -32,6 +32,10 @@ fi
 if [[ $provider == "yahoo" ]];then
   provider="imap.yahoo.com"
 fi
+# To add custom/other, just uncomment following lines
+#if [[ $provider == "PROVIDERNAME" ]];then
+#  provider="your provider's IMAP address here" # see https://www.systoolsgroup.com/imap/
+#fi
 
 ### Updates Email info in files
 if [[ $email != "" && $password != "" ]]; then
