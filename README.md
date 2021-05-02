@@ -32,7 +32,7 @@ Navigate to the project folder:
 #### `cd Pihole-404`
 or wherever the repo folder was installed if you installed it in a different location.\
 Run the installer script:
-#### `sudo sh install.sh`
+#### `sh install.sh`
 Test the script http://doubleclick.net
 
 ## Known Issues/Bugs
