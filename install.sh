@@ -1,14 +1,12 @@
 #!/bin/bash
 
-# THIS SCRIPT MUST BE RUN WITH SUPERUSER PERMISSIONS! USE sudo !
-
 # cool "Pihole-404" text
-apt-get install toilet cowsay lolcat
+sudo apt-get install toilet cowsay lolcat
 clear
 toilet -f mono9 "Pihole-404" | lolcat -p 1.75 -S 45 -f | cowsay -f tux -n 
 
 # Installs dependency for the Python script
-pip3 install imap-tools
+sudo pip3 install imap-tools
 echo "[✓] Installed dependency"
 
 ### Updates the email information in the automatic checker program
@@ -47,14 +45,14 @@ fi
 echo "[✓] Changed email credentials"
 
 ### Copy webpage PHP file to correct location
-cp CustomBlockPage.php /var/www/html/pihole/CustomBlockPage.php
-chmod +x /var/www/html/pihole/CustomBlockPage.php
-cp Astronaut1.png /var/www/html/pihole/Astronaut1.png
-cp background.jpg /var/www/html/pihole/background.jpg
+sudo cp CustomBlockPage.php /var/www/html/pihole/CustomBlockPage.php
+sudo chmod +x /var/www/html/pihole/CustomBlockPage.php
+sudo cp Astronaut1.png /var/www/html/pihole/Astronaut1.png
+sudo cp background.jpg /var/www/html/pihole/background.jpg
 echo "[✓] Webpage PHP file is located at /var/www/html/pihole/CustomBlockPage.php  Feel free to edit!"
 
 ### Changes the default 404 page to the custom page found in /var/www/html/pihole/
-sed -i 's:server.error-handler-404    = "/pihole/index.php/":server.error-handler-404    = "/pihole/CustomBlockPage.php":gi' /etc/lighttpd/lighttpd.conf
+sudo sed -i 's:server.error-handler-404    = "/pihole/index.php/":server.error-handler-404    = "/pihole/CustomBlockPage.php":gi' /etc/lighttpd/lighttpd.conf
 echo "[✓] Changed configuration file for lighttpd located at /etc/lighttpd/lighttpd.conf"
 sudo service lighttpd restart
 
@@ -73,7 +71,7 @@ if [ -f "$FILE" ]; then
         continue
       else
         # IF BLOCKINGMODE is present but not set to IP
-        sed -i 's/.*BLOCKINGMODE.*/BLOCKINGMODE=IP/' $FILE
+        sudo sed -i 's/.*BLOCKINGMODE.*/BLOCKINGMODE=IP/' $FILE
       fi
     else
       # If BLOCKINGMODE line is not present
@@ -81,11 +79,11 @@ if [ -f "$FILE" ]; then
     fi
 else 
     # File does not exist
-    touch $FILE
+    sudo touch $FILE
     echo "BLOCKINGMODE=IP" | sudo tee -a $FILE
 fi
 
 sudo service pihole-FTL restart
 
 ### Start Email Checker program in background, make it check email every 10 seconds
-watch -n 10 python3 EmailChecker.py &
+sudo watch -n 10 python3 EmailChecker.py &
