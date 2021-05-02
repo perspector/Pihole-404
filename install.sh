@@ -5,7 +5,7 @@
 # cool "Pihole-404" text
 apt-get install toilet cowsay lolcat
 clear
-toilet -f mono9 "Pihole-404" | lolcat -p 1.75 -S 45 -f | cowsay -f tux -n 
+#toilet -f mono9 "Pihole-404" | lolcat -p 1.75 -S 45 -f | cowsay -f tux -n 
 
 # Installs dependency for the Python script
 pip3 install imap-tools
