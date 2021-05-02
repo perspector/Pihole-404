@@ -89,4 +89,4 @@ fi
 sudo service pihole-FTL restart
 
 ### Start Email Checker program in background, make it check email every 10 seconds
-sudo watch -n 10 python3 EmailChecker.py &
+while true; do python3 EmailChecker.py ; sleep 10; done &
