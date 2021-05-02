@@ -18,20 +18,20 @@ read -p "Please enter your email for the script: " email
 read -p "Please enter your email password: " password
 # Take the email provider
 read -p "What email provider do you use? (gmail/outlook/aol/yahoo) " provider
-if [[ $provider == "gmail" ]];then
+if [ "$provider" == "gmail" ];then
   provider="imap.gmail.com"
 fi
-if [[ $provider == "outlook" ]];then
+if [ "$provider" == "outlook" ];then
   provider="imap-outlook.com"
 fi
-if [[ $provider == "aol" ]];then
+if [ "$provider" == "aol" ];then
   provider="imap.aol.com"
 fi
-if [[ $provider == "yahoo" ]];then
+if [ "$provider" == "yahoo" ];then
   provider="imap.yahoo.com"
 fi
 # To add custom/other, just uncomment following lines
-#if [[ $provider == "PROVIDERNAME" ]];then
+#if [ "$provider" == "PROVIDERNAME" ];then
 #  provider="your provider's IMAP address here" # see https://www.systoolsgroup.com/imap/
 #fi
 
