@@ -7,7 +7,7 @@ toilet -f mono9 "Pihole-404" | lolcat -p 1.75 -S 45 -f | cowsay -f tux -n
 
 # Installs dependency for the Python script
 sudo pip3 install imap-tools
-echo "[✓] Installed dependency"
+echo "[✓] Installed Python3 program dependency imap-tools (for automatically checking email to whitelist domain)"
 
 ### Updates the email information in the automatic checker program
 emailfile="EmailChecker.py"
@@ -35,6 +35,8 @@ fi
 #  provider="your provider's IMAP address here" # see https://www.systoolsgroup.com/imap/
 #fi
 
+echo "Your provider's IMAP address is: $provider"
+
 ### Updates Email info in files
 if [ "$email" != "" ] && [ "$password" != "" ]; then
 sed -i "s/someone@example.com/$email/gi" $emailfile
@@ -61,6 +63,8 @@ sudo service lighttpd restart
 
 ### Changes blocking mode to IP in /etc/pihole/pihole-FTL.conf . This will make the custom 404 page display.
 # More details can be found at https://docs.pi-hole.net/ftldns/blockingmode/
+echo " The next part of the installer script will set the Pihole blocking mode to IP. More details can be found at:\n https://docs.pi-hole.net/ftldns/blockingmode/ \n If you do not want to change this, press CTRL + C (you have 10 seconds)"
+sleep 10
 FILE=/etc/pihole/pihole-FTL.conf
 
 if [ -f "$FILE" ]; then
@@ -90,3 +94,4 @@ sudo service pihole-FTL restart
 
 ### Start Email Checker program in background, make it check email every 10 seconds
 while true; do python3 EmailChecker.py ; sleep 10; done &
+echo "[✓] Email checker program is running! Everything is setup and ready to go! \nTry going to http://doubleclick.net to test it out! \nIf you like this, please star my repository! \nThanks :]"
