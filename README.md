@@ -1,5 +1,5 @@
 # Pihole-404
-A nice 404 page for pihole with an added automatic script that can be used to whitelist the domain with the click of a button.
+A nice custom 404 page for pihole with an added automatic script that can be used to whitelist the domain with the click of a button.
 
 ![This is what your 404 page will look like. Of course, you can also customize it.](./Screenshot.png)
 _^Above: This is what your 404 page will look like! Of course, feel free to customize it._
@@ -56,4 +56,4 @@ The installer script should fix this.
 * Wallpaperflare for amazing images ([Astronaut](https://www.wallpaperflare.com/astronaut-clipart-space-monochrome-artwork-copy-space-close-up-wallpaper-ppoyl), [Moon](https://www.wallpaperflare.com/minimalism-space-black-background-artwork-simple-background-wallpaper-pmmgi))
 * [Pixlr E](https://pixlr.com/e/) for great online photo editing
 
-# If you find this repo useful, **please star it and share it!** If you have questions, just create an [issue](https://github.com/BennyThePythonCoder/Pihole-404/issues).
+# If you find this repo useful, **please ⭐ it and share it!** If you have questions, just create an [issue](https://github.com/BennyThePythonCoder/Pihole-404/issues).
