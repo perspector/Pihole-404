@@ -21,8 +21,7 @@ _^Above: This is what your 404 page will look like! Of course, feel free to cust
 &emsp; I used Email so it would be more secure, not just a command being executed by the website. Having a button to run any command on the pihole would be a vulnerability, so I decided email would be better.
 
 ## Step 1: Install Pihole and Get it Working
-To get your pihole up and running (haha), head over to [https://github.com/pi-hole/pi-hole](https://github.com/pi-hole/pi-hole){:target="_blank"}\
-<a href="https://github.com/pi-hole/pi-hole" target="_blank">https://github.com/pi-hole/pi-hole</a>
+To get your pihole up and running (haha), head over to [https://github.com/pi-hole/pi-hole](https://github.com/pi-hole/pi-hole)
 
 ## Step 2: Enable Less Secure App Access and IMAP
 If you are using Gmail, you need to enable less secure app access to your google account [here](https://myaccount.google.com/lesssecureapps). You also need to enable IMAP, if it is not already enabled [here](https://mail.google.com/mail/u/0/#settings/fwdandpop). Scroll down to **IMAP Access** and make sure **Status** is set to **Enable IMAP**. I am not sure about other providers as I have not tried them.
