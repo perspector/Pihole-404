@@ -18,6 +18,7 @@ _^Above: This is what your 404 page will look like! Of course, feel free to cust
 
 ## The Solution:
 &emsp; Pihole-404 to the rescue! This simple script will add a button that lets you email the admin. This email will be read by an automatic python script and the domain will be whitelisted! And on top of all that, it makes the 404 page look very nice!
+&emsp; I used Email so it would be more secure, not just a command being executed by the website. Having a button to run any command on the pihole would be a vulnerability, so I decided email would be better.
 
 ## Step 1: Install Pihole and Get it Working
 Head over to https://github.com/pi-hole/pi-hole
