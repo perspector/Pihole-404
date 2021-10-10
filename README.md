@@ -49,8 +49,9 @@ The installer script should fix this.
 #### _Note: The script will change settings in /etc/lighttpd/lighttpd.conf . Upon updating your Pi, you will need to run the installer script again. Also, this script sets blocking mode to IP blocking. If you want to change this, just edit /etc/pihole/pihole-FTL.conf and set blocking mode to something else (anything other than IP will disable the 404 page). This is explained in depth [here](https://docs.pi-hole.net/ftldns/blockingmode/)._
 
 ## Uninstalling
-Sorry to see you go. If you want to uninstall the programs and restore changes made by the script, just use the following command:
-`sh uninstall.sh` please email me at [bennypythoncoder@gmail.com](mailto:bennypythoncoder@gmail.com) to tell me why you chose to uninstall the programs.
+Sorry to see you go. If you want to uninstall the programs and restore settings before the script was used, just use the following command:
+`sh uninstall.sh`\
+Please email me at [bennypythoncoder@gmail.com](mailto:bennypythoncoder@gmail.com?subject=Why%20I%20uninstalled%20Pihole-404) to tell me why you chose to uninstall the programs.
 
 ## Credits:
 * Everyone at [pi-hole](https://pi-hole.net) ([Github](https://github.com/pi-hole/pi-hole))
