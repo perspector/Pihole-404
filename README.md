@@ -50,7 +50,7 @@ The installer script should fix this.
 
 ## Uninstalling
 Sorry to see you go. If you want to uninstall the programs and restore settings before the script was used, just use the following command:
-#### `sh uninstall.sh`\
+#### `sh uninstall.sh`
 Please email me at [bennypythoncoder@gmail.com](mailto:bennypythoncoder@gmail.com?subject=Why%20I%20uninstalled%20Pihole-404) to tell me why you chose to uninstall the programs.
 
 ## Credits:
