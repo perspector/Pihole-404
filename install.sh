@@ -57,7 +57,7 @@ sudo cp background.jpg /var/www/html/pihole/background.jpg
 echo "[✓] Webpage PHP file is located at /var/www/html/pihole/CustomBlockPage.php  Feel free to edit!"
 
 ### Changes the default 404 page to the custom page found in /var/www/html/pihole/
-sudo sed -i 's:server.error-handler-404    = "/pihole/index.php/":server.error-handler-404    = "/pihole/CustomBlockPage.php":gi' /etc/lighttpd/lighttpd.conf
+sudo sed -i 's:server.error-handler-404    = "/pihole/index.php":server.error-handler-404    = "/pihole/CustomBlockPage.php":gi' /etc/lighttpd/lighttpd.conf
 echo "[✓] Changed configuration file for lighttpd located at /etc/lighttpd/lighttpd.conf"
 sudo service lighttpd restart
 
