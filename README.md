@@ -11,6 +11,7 @@ _^Above: This is what your 404 page will look like! Of course, feel free to cust
 * [Step 2](#step-2)
 * [Step 3](#step-3)
 * [Known Bugs](#known-issuesbugs)
+* [Uninstalling](#uninstalling)
 * [Credits](#credits)
 
 ## The Problem:
