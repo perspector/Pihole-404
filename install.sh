@@ -1,17 +1,58 @@
 #!/bin/bash
 
-# cool "Pihole-404" text
-sudo apt-get install toilet cowsay lolcat
 clear
-toilet -f mono9 "Pihole-404" | lolcat -p 1.75 -S 45 -f | cowsay -f tux -n 
+# Cool splash text
+echo '
+______   _ _           _               ___ _____    ___
+| ___ \ (_) |         | |             /   |  _  |  /   |
+| |_/ / | | |__   ___ | | ___ ______ / /| | | | | / /| |
+|  __/  | |  _ \ / _ \| |/ _ \______/ /_| | |/| |/ /_| |
+| |     | | | | | (_) | |  __/      \___  | |_/ |\___  |
+\_|     |_|_| |_|\___/|_|\___|          |_/\____/    |_/
+
+By BennyThePythonCoder
+Repo can be found at (https://github.com/BennyThePythonCoder/Pihole-404)
+Thanks to pi-hole (pi-hole.net) (https://github.com/pi-hole/pi-hole)
+Other credits can be found at (https://github.com/BennyThePythonCoder/Pihole-404#credits)
+'
+sleep 5
+clear
+
+echo '
+This program is licensed under the MIT License.
+
+MIT License
+
+Copyright (c) 2021 BennyThePythonCoder
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+'
+sleep 5
+clear
 
 # Installs dependency for the Python script
 sudo pip3 install imap-tools
 echo "[✓] Installed Python3 program dependency imap-tools (for automatically checking email to whitelist domain)"
 
 ### Updates the email information in the automatic checker program
-emailfile="EmailChecker.py"
 phpfile="CustomBlockPage.php"
+emailfile="EmailChecker.py"
 # Take the email string
 read -p "Please enter your email for the script: " email
 # Take the password string
@@ -30,7 +71,7 @@ fi
 if [ "$provider" = "yahoo" ];then
   provider="imap.yahoo.com"
 fi
-# To add custom/other, just uncomment following lines
+### To add custom/other, just uncomment following lines
 #if [ "$provider" = "PROVIDERNAME" ];then
 #  provider="your provider's IMAP address here" # see https://www.systoolsgroup.com/imap/
 #fi
@@ -39,15 +80,14 @@ echo "Your provider's IMAP address is: $provider"
 
 ### Updates Email info in files
 if [ "$email" != "" ] && [ "$password" != "" ]; then
-sed -i "s/someone@example.com/$email/gi" $emailfile
-sed -i "s/PASSWORD/$password/gi" $emailfile
-sed -i "s/imap.example.com/$provider/gi" $emailfile
-sed -i "s/someone@example.com/$email/gi" $phpfile
+sed -i '9s/.*/with MailBox("$provider").login("$email", "$password", initial_folder="INBOX") as mailbox:/' $emailfile
+sed -i '20s#.*#      <a href="mailto:$email?subject=Domain%20Blocked&body=[sub]" onclick="this.href =this.href.replace("[sub]",window.location)" target="_blank" rel=noopener noreferrer><button style="background-color:white; border-color:white">here</button></a>.<br>#' $phpfile
 echo "[✓] Changed email credentials"
 else
 echo You did not enter an email or password, stopping program
 exit
 fi
+
 
 ### Copy webpage PHP file to correct location
 sudo cp CustomBlockPage.php /var/www/html/pihole/CustomBlockPage.php
