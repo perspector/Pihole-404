@@ -3,7 +3,7 @@ read -p "This will uninstall all code from the Pihole-404 repository and will re
 if [ "$confirmation" = "y" ];then
   echo "Starting uninstall process"
   sudo apt-get remove toilet cowsay lolcat
-  sudo pip3 remove imap-tools
+  sudo pip3 uninstall imap-tools
   sudo rm /var/www/html/pihole/CustomBlockPage.php
   sudo rm /var/www/html/pihole/Astronaut1.png
   sudo rm /var/www/html/pihole/background.jpg
