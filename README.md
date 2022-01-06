@@ -34,7 +34,7 @@ Navigate to the project folder:
 #### `cd Pihole-404`
 or wherever the repo folder was installed if you installed it in a different location.\
 Run the installer script:
-#### `sh install.sh`
+#### `python3 install.py`
 Test the script http://doubleclick.net
 
 ## Known Issues/Bugs
