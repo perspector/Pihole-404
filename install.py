@@ -69,7 +69,7 @@ if file_exists == False or redo_setup in yes_strings:
     if provider == "gmail":
         provider = 'imap.gmail.com'
     if provider == "outlook":
-        provider = 'imap-outlook.com"
+        provider = 'imap-outlook.com'
     if provider == "aol":
         provider = 'imap.aol.com'
     if provider == "yahoo":
