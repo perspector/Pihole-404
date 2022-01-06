@@ -123,7 +123,7 @@ if file_exists == False or redo_setup in yes_strings:
                 # if BLOCKINGMODE line is in file
                 if '=IP' in contents:
                     # if BLOCKINGMODE is set to IP
-                    break # then the work is done and we do not need to edit the file
+                    pass # then the work is done and we do not need to edit the file
                 else:
                     # If BLOCKINGMODE line is present but not set to IP
                     os.system(f"sudo sed -i 's/.*BLOCKINGMODE.*/BLOCKINGMODE=IP/' {FTL_file}")
