@@ -67,20 +67,20 @@ if file_exists == False or redo_setup in yes_strings:
     provider = input("What email provider do you use? (gmail/outlook/aol/yahoo/other) ")
 
     if provider == "gmail":
-        provider = "imap.gmail.com"
+        provider = 'imap.gmail.com'
     if provider == "outlook":
-        provider = "imap-outlook.com"
+        provider = 'imap-outlook.com"
     if provider == "aol":
-        provider = "imap.aol.com"
+        provider = 'imap.aol.com'
     if provider == "yahoo":
-        provider = "imap.yahoo.com"
+        provider = 'imap.yahoo.com'
     if provider == "other":
         print("Please look at https://www.systoolsgroup.com/imap/\n\n")
-        provider = input("""
+        provider = input('''
         If your provider was listed there, then please input the IMAP address of the provider.
         If it was not there, then use a search engine to find the IMAP address of your provider.
         Please type the IMAP address here (for example imap.gmail.com for Gmail):
-        """)
+        ''')
 
     print(f"Your provider's IMAP address is: {provider}")
 
