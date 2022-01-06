@@ -12,9 +12,11 @@ def clearScreen(numlines):
 
 # Easily rewrite a line in a file
 def rewrite(file, line, target_text):
-    with open(file, 'rw') as FILE:
+    with open(file, 'r') as FILE:
         data = FILE.readlines()
         data[line-1] = target_text
+        file.close()
+    with open(file,'w') as FILE:
         file.writelines(data)
         file.close()
 
