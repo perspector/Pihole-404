@@ -6,8 +6,8 @@ import os.path
 import time
 
 # Easily clear the screen
-def clearScreen(int(numlines)):
-    for i in range(0,numlines):
+def clearScreen(numlines):
+    for i in range(0,int(numlines)):
         print("\n")
 
 # Easily rewrite a line in a file
