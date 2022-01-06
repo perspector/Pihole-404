@@ -15,10 +15,10 @@ def rewrite(file, line, target_text):
     with open(file, 'r') as FILE:
         data = FILE.readlines()
         data[line-1] = target_text
-        file.close()
+        FILE.close()
     with open(file,'w') as FILE:
-        file.writelines(data)
-        file.close()
+        FILE.writelines(data)
+        FILE.close()
 
 # Clear the screen
 clearScreen(20)
