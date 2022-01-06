@@ -33,8 +33,8 @@ On the Raspberry Pi, Clone this repository:
 Navigate to the project folder:
 #### `cd Pihole-404`
 or wherever the repo folder was installed if you installed it in a different location.\
-Run the installer script:
-#### `python3 install.py`
+Run the installer script (as root):
+#### `sudo python3 install.py`
 Test the script http://doubleclick.net
 
 ## Known Issues/Bugs
