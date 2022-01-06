@@ -81,7 +81,10 @@ if file_exists == False or redo_setup in yes_strings:
         If it was not there, then use a search engine to find the IMAP address of your provider.
         Please type the IMAP address here (for example imap.gmail.com for Gmail):
         ''')
-
+    
+    email = email.strip('\n')
+    password = password.strip('\n')
+    provider = password.strip('\n')
     print(f"Your provider's IMAP address is: {provider}")
 
     # Adds credentials to the files so they work properly
