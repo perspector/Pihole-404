@@ -94,11 +94,7 @@ if file_exists == False or redo_setup in yes_strings:
     with open('credentials.txt', 'w') as credentials_file:
         credentials_file.truncate() # clears the file, avoids errors/problems
         # actually adds updated credentials to the file
-        credentials_file.write(f"""
-        EMAIL:{email}
-        PASSWORD:{password}
-        PROVIDER:{provider}
-        """)
+        credentials_file.write(f"{email}\n{password}\n{provider}\n)
         credentials_file.close()
 
     # Copy webpage PHP file to correct location
