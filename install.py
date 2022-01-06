@@ -119,7 +119,7 @@ if file_exists == False or redo_setup in yes_strings:
     FTL_file = '/etc/pihole/pihole-FTL.conf'
     if os.path.exists(FTL_file):
         # file exists
-        with open(FTL_file, 'rw') as ftl_file:
+        with open(FTL_file, 'r') as ftl_file:
             contents = ftl_file.read()
             if 'BLOCKINGMODE' in contents:
                 # if BLOCKINGMODE line is in file
@@ -131,7 +131,6 @@ if file_exists == False or redo_setup in yes_strings:
                     os.system(f"sudo sed -i 's/.*BLOCKINGMODE.*/BLOCKINGMODE=IP/' {FTL_file}")
             else:
                 # BLOCKINGMODE line is not present at all
-                # ftl_file.append('BLOCKINGMODE=IP') could also be used, but I want to make sure it uses superuser permissions in this case (sudo)
                 os.system('echo "BLOCKINGMODE=IP" | sudo tee -a $FILE')
     else:
         # the FTL_file does not exist
