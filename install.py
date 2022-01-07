@@ -53,10 +53,10 @@ if file_exists:
     Would you like to use previous settings (Y)? Or would you like to redo the setup (n)? (Y/n)
     """)
 else:
-    redo_setup = "n"
-yes_strings = {'YES', 'Yes', 'yes', 'Y', 'y'}
-no_strings = {'NO', 'No', 'no', 'N', 'n'}
-if file_exists == False or redo_setup in yes_strings:
+    redo_setup = "r"
+r_strings = {'Redo', 'redo', 'R', 'r'}
+p_strings = {'Previous', 'previous', 'P', 'p'}
+if file_exists == False or redo_setup in r_strings:
     # Installs python script dependency imap-tools
     print("[...] Installing Python3 EmailChecker.py dependency imap-tools (for automatically checking email to whitelist domain)")
     os.system('sudo pip3 install imap-tools')
@@ -142,7 +142,7 @@ if file_exists == False or redo_setup in yes_strings:
     If you like this script, please star my repository!
     Thanks :]""")
 
-elif redo_setup in no_strings:
+elif redo_setup in p_strings:
     print("OK. Using previous credentials from credentials.txt")
     with open('credentials.txt', 'r') as credentials_file:
         email = credentials_file.readline()
