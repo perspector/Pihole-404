@@ -10,6 +10,7 @@ _^Above: This is what your 404 page will look like! Of course, feel free to cust
 * [Step 1](#step-1)
 * [Step 2](#step-2)
 * [Step 3](#step-3)
+* [Step 4](#step-4)
 * [Known Bugs](#known-issuesbugs)
 * [Uninstalling](#uninstalling)
 * [Credits](#credits)
@@ -24,10 +25,20 @@ _^Above: This is what your 404 page will look like! Of course, feel free to cust
 ## Step 1: Install Pihole and Get it Working
 To get your pihole up and running (haha), head over to [https://github.com/pi-hole/pi-hole](https://github.com/pi-hole/pi-hole)
 
-## Step 2: Enable Less Secure App Access and IMAP
+## Step 2: (Gmail users only) Enable Less Secure App Access and IMAP
+If you are using an email provider other than Gmail, skip to [step 4](#step-4)
 If you are using Gmail, you need to enable less secure app access to your google account [here](https://myaccount.google.com/lesssecureapps). You also need to enable IMAP, if it is not already enabled [here](https://mail.google.com/mail/u/0/#settings/fwdandpop). Scroll down to **IMAP Access** and make sure **Status** is set to **Enable IMAP**. I am not sure about other providers as I have not tried them.
 
-## Step 3: Set up the Repo and Install
+## Step 3: (Gmail users who use 2FA only) If Using 2 Factor Authentication (2FA), Add an App Password to Use Instead of Your Google Account Password
+If using Gmail and you have 2 Facter Authentication setup, do these steps. Otherwise, skip to [step 4](#step-4)
+1. Go to https://myaccount.google.com/
+2. On the left side, select 'Security'
+3. Scroll down to the 'Signing in to Google' section and select 'App Passwords'
+4. You will be asked to sign in. Sign in.
+5. Once you have signed in again, press the menu 'Select an App' and then press 'Other'. Make the name something memorable such as 'Pihole'.
+6. Click 'GENERATE'. Copy the 16 character password for later.
+
+## Step 4: Set up the Repo and Install
 On the Raspberry Pi, Clone this repository:
 #### `git clone https://github.com/BennyThePythonCoder/Pihole-404.git`
 Navigate to the project folder:
@@ -35,7 +46,9 @@ Navigate to the project folder:
 or wherever the repo folder was installed if you installed it in a different location.\
 Run the installer script (as root):
 #### `sudo python3 install.py`
-Test the script http://doubleclick.net
+When you are asked for a password, enter your email password. If you use Google/Gmail and have 2 Facter Authentication setup, paste the app password from earlier here using `Ctrl + Shift + V`\
+Test the script here: http://doubleclick.net \
+You should get a 404 page like the screenshot above.
 
 ## Known Issues/Bugs
 &emsp; The script only works for http websites, not https/tls 😢.\
