@@ -84,7 +84,7 @@ if file_exists == False or redo_setup in yes_strings:
     
     email = email.strip('\n')
     password = password.strip('\n')
-    provider = password.strip('\n')
+    provider = provider.strip('\n')
     print(f"Your provider's IMAP address is: {provider}")
 
     # Adds credentials to the files so they work properly
@@ -151,6 +151,9 @@ elif redo_setup in no_strings:
         password = credentials_file.readline()
         provider = credentials_file.readline()
         credentials_file.close()
+    email = email.strip('\n')
+    password = password.strip('\n')
+    provider = provider.strip('\n')
     # Adds credentials to the files so they work properly
     print("[...] Adding credentials to files EmailChecker.py and CustomBlockPage.php so the script can work")
     rewrite(php_file, 20, f"      <a href='mailto:{email}?subject=Domain%20Blocked&body=[sub]' onclick='this.href =this.href.replace('[sub]',window.location)' target='_blank' rel=noopener noreferrer><button style='background-color:white; border-color:white'>here</button></a>.<br>\n")
