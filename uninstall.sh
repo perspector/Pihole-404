@@ -6,7 +6,7 @@ if [ "$confirmation" = "y" ];then
   sudo rm /var/www/html/pihole/CustomBlockPage.php
   sudo rm /var/www/html/pihole/Astronaut1.png
   sudo rm /var/www/html/pihole/background.jpg
-  sudo sed -i 's:server.error-handler-404    = "/pihole/CustomBlockPage.php":server-error-handler-404    = "/pihole/index.php":gi' /etc/lighttpd/lighttpd.conf
+  sudo sed -i 's:server.error-handler-404    = "/pihole/CustomBlockPage.php"::gi' /etc/lighttpd/external.conf
   sudo service lighttpd restart
   
   FILE=/etc/pihole/pihole-FTL.conf
@@ -36,6 +36,8 @@ if [ "$confirmation" = "y" ];then
   sudo service pihole-FTL restart
   # and finally delete the Pihole-404 files :(
   sudo rm -r /home/pi/Pihole-404/
+  echo 'Everything from Pihole-404 has been deleted and all changes have been restored to their origional configeration.'
+  echo 'You will still be in the Pihole-404 folder, to exit, just type cd. The folder will not be there.'
 fi
 if [ "$confirmation" != "y" ];then
   echo "Abort"
