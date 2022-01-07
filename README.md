@@ -7,10 +7,10 @@ _^Above: This is what your 404 page will look like! Of course, feel free to cust
 ## Table of Contents
 * [The Problem](#the-problem)
 * [The Solution](#the-solution)
-* [Step 1](#step-1)
-* [Step 2](#step-2)
-* [Step 3](#step-3)
-* [Step 4](#step-4)
+* [Step 1](#step-1-install-pihole-and-get-it-working)
+* [Step 2](#step-2-gmail-users-only-enable-less-secure-app-access-and-imap)
+* [Step 3](#step-3-gmail-users-using-2fa-only-add-an-app-password-to-use-instead-of-using-your-google-account-password)
+* [Step 4](#step-4-set-up-the-repo-and-install)
 * [Known Bugs](#known-issuesbugs)
 * [Uninstalling](#uninstalling)
 * [Credits](#credits)
@@ -26,11 +26,11 @@ _^Above: This is what your 404 page will look like! Of course, feel free to cust
 To get your pihole up and running (haha), head over to [https://github.com/pi-hole/pi-hole](https://github.com/pi-hole/pi-hole)
 
 ## Step 2: (Gmail users only) Enable Less Secure App Access and IMAP
-If you are using an email provider other than Gmail, skip to [step 4](#step-4)
+If you are using an email provider other than Gmail, skip to [step 4](#step-4-set-up-the-repo-and-install)
 If you are using Gmail, you need to enable less secure app access to your google account [here](https://myaccount.google.com/lesssecureapps). You also need to enable IMAP, if it is not already enabled [here](https://mail.google.com/mail/u/0/#settings/fwdandpop). Scroll down to **IMAP Access** and make sure **Status** is set to **Enable IMAP**. I am not sure about other providers as I have not tried them.
 
-## Step 3: (Gmail users who use 2FA only) If Using 2 Factor Authentication (2FA), Add an App Password to Use Instead of Your Google Account Password
-If using Gmail and you have 2 Facter Authentication setup, do these steps. Otherwise, skip to [step 4](#step-4)
+## Step 3: (Gmail users who use 2FA only) Add an App Password to Use Instead of your Google Account Password
+If using Gmail and you have 2 Facter Authentication setup, do these steps. Otherwise, skip to [step 4](#step-4-set-up-the-repo-and-install)
 1. Go to https://myaccount.google.com/
 2. On the left side, select 'Security'
 3. Scroll down to the 'Signing in to Google' section and select 'App Passwords'
