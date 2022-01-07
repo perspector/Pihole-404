@@ -107,8 +107,9 @@ if file_exists == False or redo_setup in yes_strings:
     os.system('sudo cp background.jpg /var/www/html/pihole/background.jpg')
     print('[✓] Webpage PHP file is located at /var/www/html/pihole/CustomBlockPage.php  Feel free to edit!')
     # Changes the default 404 page to the custom page found in /var/www/html/pihole/
-    os.system('sudo sed -i "s:server.error-handler-404    = "/pihole/index.php":server.error-handler-404    = "/pihole/CustomBlockPage.php":gi" /etc/lighttpd/lighttpd.conf')
-    print('[✓] Changed configuration file for lighttpd located at /etc/lighttpd/lighttpd.conf')
+    #os.system('sudo sed -i "s:server.error-handler-404    = "/pihole/index.php":server.error-handler-404    = "/pihole/CustomBlockPage.php":gi" /etc/lighttpd/lighttpd.conf')
+    os.system('echo "server.error-handler-404    = /pihole/CustomBlockPage.php" | sudo tee -a /etc/lighttpd/external.conf')
+    print('[✓] Changed configuration file for lighttpd located at /etc/lighttpd/external.conf')
     os.system('sudo service lighttpd restart')
 
     # Changes blocking mode to IP in /etc/pihole/pihole-FTL.conf . This will make the custom 404 page display.
@@ -130,7 +131,7 @@ if file_exists == False or redo_setup in yes_strings:
                     os.system(f"sudo sed -i 's/.*BLOCKINGMODE.*/BLOCKINGMODE=IP/' {FTL_file}")
             else:
                 # BLOCKINGMODE line is not present at all
-                os.system('echo "BLOCKINGMODE=IP" | sudo tee -a $FILE')
+                os.system(f'echo "BLOCKINGMODE=IP" | sudo tee -a {FTL_file}')
     else:
         # the FTL_file does not exist
         os.system(f'sudo touch {FTL_file}')
