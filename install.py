@@ -63,7 +63,7 @@ if file_exists == False or redo_setup in r_strings:
     print("[✓] Installed Python3 EmailChecker.py dependency imap-tools\n\n")
 
     email = input("Please enter your email for the script: ")
-    password = input("Please entery your email password: ")
+    password = input("Please enter your email password: ")
     provider = input("What email provider do you use? (gmail/outlook/aol/yahoo/other) ")
 
     if provider == "gmail":
