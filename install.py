@@ -108,7 +108,7 @@ if file_exists == False or redo_setup in yes_strings:
     print('[✓] Webpage PHP file is located at /var/www/html/pihole/CustomBlockPage.php  Feel free to edit!')
     # Changes the default 404 page to the custom page found in /var/www/html/pihole/
     #os.system('sudo sed -i "s:server.error-handler-404    = "/pihole/index.php":server.error-handler-404    = "/pihole/CustomBlockPage.php":gi" /etc/lighttpd/lighttpd.conf')
-    os.system('echo "server.error-handler-404    = /pihole/CustomBlockPage.php" | sudo tee -a /etc/lighttpd/external.conf')
+    os.system('echo "server.error-handler-404    = \"/pihole/CustomBlockPage.php\"" | sudo tee -a /etc/lighttpd/external.conf')
     print('[✓] Changed configuration file for lighttpd located at /etc/lighttpd/external.conf')
     os.system('sudo service lighttpd restart')
 
