@@ -20,17 +20,14 @@ with MailBox('imap.example.com').login("someone@example.com", "PASSWORD", initia
     # tries to format email correctly
     try:
         body = body[0] # First line of body only, removes email signature such as "Sent using Mail from Windows", etc.
-        # For security, if it contains ' or " or && or | replace the text afterwords with whitespace
-        head, sep, tail = body.partition("'") # Removes everything after '
-        body = head
-        head, sep, tail = body.partision('"') # Removes everything after "
         forbiddenChars = ['"', "'", "&", "|", ";"] # Emails with characters " ' & or | could potentially execute another command causing a security risk
         for char in forbiddenChars:
             if char in body:
-                return void = True # Security risk
+                void = True # Security risk
             else:
-                return void = False # Not a security risk
+                void = False # Not a security risk
         if void == True: # If it is a security risk, do nothing with the email so that the admin can see it and who it was sent by, do not handle the email
+            print("Email detected as possible security risk because it contained characters \" ' & | or ; \nCheck your PiHoleWhiteList folder. Verify the email of the sender.")
             pass
         elif void == False: # 
             body = body.replace("\r\n", "")
