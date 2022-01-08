@@ -111,7 +111,7 @@ if file_exists == False or redo_setup in r_strings:
     #os.system('sudo sed -i "s:server.error-handler-404    = "/pihole/index.php":server.error-handler-404    = "/pihole/CustomBlockPage.php":gi" /etc/lighttpd/lighttpd.conf')
     #os.system('echo "server.error-handler-404    = \"/pihole/CustomBlockPage.php\"" | sudo tee -a /etc/lighttpd/external.conf')
     #subprocess.run('echo "', 'server.error-handler-404    = \"/pihole/CustomBlockPage.php\""', '|', 'sudo tee -a /etc/lighttpd/external.conf')
-    text = 'sudo sh -c \'echo "server.error-handler-404    = \\"/pihole/CustomBlockPage.php\\"" >> /etc/lighttpd/external.conf''
+    text = 'sudo sh -c \'echo "server.error-handler-404    = \\"/pihole/CustomBlockPage.php\\"" >> /etc/lighttpd/external.conf\''
     os.system(text)
     print('[✓] Changed configuration file for lighttpd located at /etc/lighttpd/external.conf')
     os.system('sudo service lighttpd restart')
