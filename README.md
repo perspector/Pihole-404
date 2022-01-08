@@ -9,7 +9,7 @@ _^Above: This is what your 404 page will look like! Of course, feel free to cust
 * [The Solution](#the-solution)
 * [Step 1](#step-1-install-pihole-and-get-it-working)
 * [Step 2](#step-2-gmail-users-only-enable-less-secure-app-access-and-imap)
-* [Step 3](#step-3-gmail-users-using-2fa-only-add-an-app-password-to-use-instead-of-using-your-google-account-password)
+* [Step 3](#step-3-gmail-users-using-2fa-only-add-an-app-password-to-use-instead-of-your-google-account-password)
 * [Step 4](#step-4-set-up-the-repo-and-install)
 * [Known Bugs](#known-issuesbugs)
 * [Uninstalling](#uninstalling)
