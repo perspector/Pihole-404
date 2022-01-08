@@ -113,7 +113,7 @@ if file_exists == False or redo_setup in r_strings:
     #subprocess.run('echo "', 'server.error-handler-404    = \"/pihole/CustomBlockPage.php\""', '|', 'sudo tee -a /etc/lighttpd/external.conf')
     #text = 'sudo sh -c \'echo "server.error-handler-404    = \\"/pihole/CustomBlockPage.php\\"" >> /etc/lighttpd/external.conf\''
     #os.system(text)
-    os.system("sudo sed -i 's?.*pihole/index.php.*?/pihole/CustomBlockPage.php?' /etc/lighttpd/lighttpd.conf")
+    os.system("sudo sed -i -e 's?/pihole/index.php?/pihole/CustomBlockPage.php?g' /etc/lighttpd/lighttpd.conf")
     print('[✓] Changed configuration file for lighttpd located at /etc/lighttpd/lighttpd.conf')
     os.system('sudo service lighttpd restart')
 
