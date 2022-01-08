@@ -8,18 +8,18 @@ import os
 # gets list of email subjects from INBOX folder
 with MailBox('imap.example.com').login("someone@example.com", "PASSWORD", initial_folder='INBOX') as mailbox:
     body = [msg.text for msg in mailbox.fetch(AND(subject='Domain Blocked'))]
-    
+    print(body)
     # Checkes if the folder PiHoleWhitelist exists
     folder_exists = mailbox.folder.exists('PiHoleWhitelist')
     # if it does not exist, create it
     if folder_exists == False:
         mailbox.folder.create('PiHoleWhitelist')
     # Moves email to PiHoleWhitelist folder to avoid a cluttered Inbox
-    mailbox.move(mailbox.fetch(AND(subject='Domain Blocked')), 'PiHoleWhitelist')
+    mailbox.move(str(msg.uid for msg in mailbox.fetch(AND(subject='Domain Blocked'))), 'PiHoleWhitelist')
     
     # tries to format email correctly
     try:
-        body = body[0]
+        body = body[0] # First line of body only, removes email signature such as "Sent using Mail from Windows", etc.
         body = body.replace("\r\n", "")
         body = body.replace("https://", "")
         body = body.replace("http://", "")
