@@ -1,12 +1,12 @@
 #!/bin/bash
-read -p "This will uninstall all code from the Pihole-404 repository and will reverse any changes made. Are you sure you want to continue? (y/n) " confirmation
+read -p "This will uninstall all code from the Pihole-404 repository and will reverse any changes made. I am sorry to see you go. Are you sure you want to continue? (y/n) " confirmation
 if [ "$confirmation" = "y" ];then
   echo "Starting uninstall process"
   sudo pip3 uninstall imap-tools
   sudo rm /var/www/html/pihole/CustomBlockPage.php
   sudo rm /var/www/html/pihole/Astronaut1.png
   sudo rm /var/www/html/pihole/background.jpg
-  sudo sed -i 's:server.error-handler-404    = "/pihole/CustomBlockPage.php"::gi' /etc/lighttpd/external.conf
+  sudo sed -i -e 's?CustomBlockPage.php?index.php?g' /etc/lighttpd/lighttpd.conf
   sudo service lighttpd restart
   
   FILE=/etc/pihole/pihole-FTL.conf
