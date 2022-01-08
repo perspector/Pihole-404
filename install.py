@@ -58,6 +58,7 @@ else:
 r_strings = {'Redo', 'redo', 'R', 'r'}
 p_strings = {'Previous', 'previous', 'P', 'p'}
 if file_exists == False or redo_setup in r_strings:
+    print("[...] Performing setup...")
     # Installs python script dependency imap-tools
     print("[...] Installing Python3 EmailChecker.py dependency imap-tools (for automatically checking email to whitelist domain)")
     os.system('sudo pip3 install imap-tools')
@@ -141,14 +142,15 @@ if file_exists == False or redo_setup in r_strings:
 
     # Start Email Checker program in background, make it check email every 10 seconds
     os.system('while true; do python3 EmailChecker.py ; sleep 10; done &')
-
+    
+    print("[✓] Setup complete\n")
     print("""[✓] Email checker program is running! Everything is setup and ready to go!
     Try going to http://doubleclick.net to test it out!
     If you like this script, please star my repository!
     Thanks :]""")
 
 elif redo_setup in p_strings:
-    print("OK. Using previous credentials from credentials.txt")
+    print("[...] Using previous credentials from credentials.txt")
     with open('credentials.txt', 'r') as credentials_file:
         email = credentials_file.readline()
         password = credentials_file.readline()
@@ -165,7 +167,8 @@ elif redo_setup in p_strings:
 
     # Start Email Checker program in background, make it check email every 10 seconds
     os.system('while true; do python3 EmailChecker.py ; sleep 10; done &')
-
+    
+    print("[✓] Setup complete")
     print("""[✓] Email checker program is running! Everything is setup and ready to go!
     Try going to http://doubleclick.net to test it out!
     If you like this script, please star my repository!
