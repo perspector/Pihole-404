@@ -24,7 +24,7 @@ with MailBox('imap.example.com').login("someone@example.com", "PASSWORD", initia
         head, sep, tail = body.partition("'") # Removes everything after '
         body = head
         head, sep, tail = body.partision('"') # Removes everything after "
-        forbiddenChars = ['"', "'", "&", "|"] # Emails with characters " ' & or | could potentially execute another command causing a security risk
+        forbiddenChars = ['"', "'", "&", "|", ";"] # Emails with characters " ' & or | could potentially execute another command causing a security risk
         for char in forbiddenChars:
             if char in body:
                 return void = True # Security risk
