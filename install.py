@@ -51,7 +51,7 @@ file_exists = os.path.exists('credentials.txt')
 if file_exists:
     redo_setup = input("""
     Configuration file credentials.txt found.
-    Would you like to use previous settings (Y)? Or would you like to redo the setup (n)? (Y/n)
+    Would you like to use previous settings (P)? Or would you like to redo the setup (R)? (P/R)
     """)
 else:
     redo_setup = "r"
