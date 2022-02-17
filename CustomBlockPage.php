@@ -18,7 +18,7 @@
       <br>
       <br>
       If you believe that this page has been blocked in error,<br>please contact the admin 
-      <a href="mailto:someone@example.com?subject=Domain%20Blocked&body=[sub]" onclick="this.href =this.href.replace('[sub]',window.location)" target="_blank" rel=noopener noreferrer><button style="background-color:white; border-color:white">here</button></a>.<br>
+      <a href="mailto:someone@example.com?subject=Domain%20Blocked&body=[sub]" onclick="this.href =this.href.replace("[sub]",window.location)" target="_blank" rel=noopener noreferrer><button style="background-color:white; border-color:white">here</button></a>.<br>
       Do <u><strong>not</strong></u> change the message or subject!<br>A script will automatically whitelist the domain.
    </center>
 </center>
