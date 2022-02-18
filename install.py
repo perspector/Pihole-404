@@ -91,7 +91,7 @@ if file_exists == False or redo_setup in r_strings:
 
     # Adds credentials to the files so they work properly
     print("[...] Adding credentials to files EmailChecker.py and CustomBlockPage.php so the script can work")
-    rewrite(php_file, 20, f"      <a href='mailto:{email}?subject=Domain%20Blocked&body=[sub]' onclick='this.href =this.href.replace(\"[sub]\",window.location)' target='_blank' rel=noopener noreferrer><button style='background-color:white; border-color:white'>here</button></a>.<br>\n")
+    rewrite(php_file, 21, f"      <a href='mailto:{email}?subject=Domain%20Blocked&body=[sub]' onclick='this.href =this.href.replace(\"[sub]\",window.location)' target='_blank' rel=noopener noreferrer><button style='background-color:white; border-color:white'>here</button></a>.<br>\n")
     rewrite(email_file, 9, f"with MailBox('{provider}').login('{email}', '{password}', initial_folder='INBOX') as mailbox:\n")
     print("[✓] Finished adding credentials to files")
 
