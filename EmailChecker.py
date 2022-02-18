@@ -19,17 +19,17 @@ with MailBox('imap.example.com').login("someone@example.com", "PASSWORD", initia
     
     # tries to format email correctly
     try:
+        void = False
         body = body[0] # First line of body only, removes email signature such as "Sent using Mail from Windows", etc.
         forbiddenChars = ['"', "'", "&", "|", ";"] # Emails with characters " ' & or | could potentially execute another command causing a security risk
         for char in forbiddenChars:
-            if char in body:
-                void = True # Security risk
-            else:
-                void = False # Not a security risk
+            result = body.find(char)
+            if result != -1:
+                void = True
         if void == True: # If it is a security risk, do nothing with the email so that the admin can see it and who it was sent by, do not handle the email
             print("Email detected as possible security risk because it contained characters \" ' & | or ; \nCheck your PiHoleWhiteList folder. Verify the email of the sender.")
             pass
-        elif void == False: # 
+        elif void == False: # Email is not a security risk
             body = body.replace("\r\n", "")
             body = body.replace("https://", "")
             body = body.replace("http://", "")
