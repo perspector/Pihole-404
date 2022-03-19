@@ -1,4 +1,7 @@
 # Pihole-404
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bdda9aa0ee164479b8ecf5395b294dc9)](https://app.codacy.com/gh/BennyThePythonCoder/Pihole-404?utm_source=github.com&utm_medium=referral&utm_content=BennyThePythonCoder/Pihole-404&utm_campaign=Badge_Grade_Settings)
+
 A nice custom 404 page for pihole with an added automatic script that can be used to whitelist the domain with the click of a button.
 
 ![This is what your 404 page will look like. Of course, you can also customize it.](./Screenshot.png)
