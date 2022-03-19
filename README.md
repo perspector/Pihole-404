@@ -5,20 +5,20 @@ A nice custom 404 page for pihole with an added automatic script that can be use
 _^Above: This is what your 404 page will look like! Of course, feel free to customize it._
 
 ## Table of Contents
-* [The Problem](#the-problem)
-* [The Solution](#the-solution)
-* [Step 1](#step-1-install-pihole-and-get-it-working)
-* [Step 2](#step-2-gmail-users-only-enable-less-secure-app-access-and-imap)
-* [Step 3](#step-3-gmail-users-who-use-2fa-only-add-an-app-password-to-use-instead-of-your-google-account-password)
-* [Step 4](#step-4-set-up-the-repo-and-install)
-* [Known Bugs](#known-issuesbugs)
-* [Uninstalling](#uninstalling)
-* [Credits](#credits)
+*  [The Problem](#the-problem)
+*  [The Solution](#the-solution)
+*  [Step 1](#step-1-install-pihole-and-get-it-working)
+*  [Step 2](#step-2-gmail-users-only-enable-less-secure-app-access-and-imap)
+*  [Step 3](#step-3-gmail-users-who-use-2fa-only-add-an-app-password-to-use-instead-of-your-google-account-password)
+*  [Step 4](#step-4-set-up-the-repo-and-install)
+*  [Known Bugs](#known-issuesbugs)
+*  [Uninstalling](#uninstalling)
+*  [Credits](#credits)
 
-## The Problem:
+## The Problem
 &emsp; Setting up a Pihole is awesome and pretty easy. But what happens when a page you want to go to is blocked? You get a boring 404 error. And what if you want to go to the webpage? First, you have to go to your pihole's website. Then you have to login. Next, you need to go to whitelist and type in the domain. This is great, but what if you don't know the password or a client has problems?
 
-## The Solution:
+## The Solution
 &emsp; Pihole-404 to the rescue! This simple script will add a button that lets you email the admin. This email will be read by an automatic python script and the domain will be whitelisted! And on top of all that, it makes the 404 page look very nice!\
 &emsp; I used Email so it would be more secure, not just a command being executed by the website. Having a button to run any command on the pihole would be a vulnerability, so I decided email would be better.
 
