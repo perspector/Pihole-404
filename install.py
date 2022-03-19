@@ -3,7 +3,6 @@
 # import necessary requirements
 import os
 import os.path
-import subprocess
 import time
 
 # Easily clear the screen
@@ -83,7 +82,6 @@ if file_exists == False or redo_setup in r_strings:
         If it was not there, then use a search engine to find the IMAP address of your provider.
         Please type the IMAP address here (for example imap.gmail.com for Gmail):
         ''')
-    
     email = email.strip('\n')
     password = password.strip('\n')
     provider = provider.strip('\n')
