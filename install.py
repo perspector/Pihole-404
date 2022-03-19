@@ -141,7 +141,6 @@ if file_exists == False or redo_setup in r_strings:
     os.system('sudo service pihole-FTL restart')
     # Start Email Checker program in background, make it check email every 10 seconds
     os.system('while true; do python3 EmailChecker.py ; sleep 10; done &')
-    
     print("[✓] Setup complete\n")
     print("""[✓] Email checker program is running! Everything is setup and ready to go!
     Try going to http://doubleclick.net to test it out!
