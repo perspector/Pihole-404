@@ -137,7 +137,6 @@ if file_exists == False or redo_setup in r_strings:
         # the FTL_file does not exist
         os.system(f'sudo touch {FTL_file}')
         os.system(f'echo "BLOCKINGMODE=IP" | sudo tee -a {FTL_file}')
-    
     # Restarts the pihole-FTL service to apply changes
     os.system('sudo service pihole-FTL restart')
     # Start Email Checker program in background, make it check email every 10 seconds
