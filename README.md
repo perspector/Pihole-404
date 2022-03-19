@@ -77,4 +77,4 @@ Please email me at [bennypythoncoder@gmail.com](mailto:bennypythoncoder@gmail.co
 *  Wallpaperflare for amazing images ([Astronaut](https://www.wallpaperflare.com/astronaut-clipart-space-monochrome-artwork-copy-space-close-up-wallpaper-ppoyl), [Moon](https://www.wallpaperflare.com/minimalism-space-black-background-artwork-simple-background-wallpaper-pmmgi))
 *  [Pixlr E](https://pixlr.com/e/) for great online photo editing
 
-# If you find this repo useful, **please ⭐ it and share it!** If you have questions, just create an [issue](https://github.com/BennyThePythonCoder/Pihole-404/issues).
+## If you find this repo useful, **please ⭐ it and share it!** If you have questions, just create an [issue](https://github.com/BennyThePythonCoder/Pihole-404/issues)
