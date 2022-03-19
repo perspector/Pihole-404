@@ -16,7 +16,6 @@ with MailBox('imap.example.com').login("someone@example.com", "PASSWORD", initia
         mailbox.folder.create('PiHoleWhitelist')
     # Moves email to PiHoleWhitelist folder to avoid a cluttered Inbox
     mailbox.move(mailbox.uids(AND(subject='Domain Blocked')), 'PiHoleWhitelist')
-    
     # tries to format email correctly
     try:
         void = False
