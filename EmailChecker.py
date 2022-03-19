@@ -28,7 +28,6 @@ with MailBox('imap.example.com').login("someone@example.com", "PASSWORD", initia
                 void = True
         if void == True: # If it is a security risk, do nothing with the email so that the admin can see it and who it was sent by, do not handle the email
             print("Email detected as possible security risk because it contained characters \" ' & | or ; \nCheck your PiHoleWhiteList folder. Verify the email of the sender.")
-            pass
         elif void == False: # Email is not a security risk
             body = body.replace("\r\n", "")
             body = body.replace("https://", "")
