@@ -162,17 +162,14 @@ elif redo_setup in p_strings:
     rewrite(php_file, 21, f"      <a href='mailto:{email}?subject=Domain%20Blocked&body=[sub]' onclick='this.href =this.href.replace('[sub]',window.location)' target='_blank' rel=noopener noreferrer><button style='background-color:white; border-color:white'>here</button></a>.<br>\n")
     rewrite(email_file, 9, f"with MailBox('{provider}').login('{email}', '{password}', initial_folder='INBOX') as mailbox:\n")
     print("[✓] Finished adding credentials to files")
-    
     # Edit /etc/lighttpd/lighttpd.conf
     os.system("sudo sed -i -e 's?index.php?CustomBlockPage.php?g' /etc/lighttpd/lighttpd.conf")
     print('[✓] Changed configuration file for lighttpd located at /etc/lighttpd/lighttpd.conf')
     os.system('sudo service lighttpd restart')  # restart lighttpd for changes to take effect
-    
     # Start Email Checker program in background, make it check email every 10 seconds
     os.system('while true; do python3 EmailChecker.py ; sleep 10; done &')
-    
     print("[✓] Setup complete")
     print("""[✓] Email checker program is running! Everything is setup and ready to go!
     Try going to http://doubleclick.net to test it out!
     If you like this script, please star my repository!
-    Thanks :""")
+    """)
