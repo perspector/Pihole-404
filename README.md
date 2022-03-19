@@ -68,7 +68,7 @@ Sorry to see you go. If you want to uninstall the programs and restore settings 
 ### `sudo sh uninstall.sh`
 Please email me at [bennypythoncoder@gmail.com](mailto:bennypythoncoder@gmail.com?subject=Why%20I%20uninstalled%20Pihole-404) to tell me why you chose to uninstall the programs.
 
-## Credits:
+## Credits
 * Everyone at [pi-hole](https://pi-hole.net) ([Github](https://github.com/pi-hole/pi-hole))
 * [This](https://www.reddit.com/r/pihole/comments/a9v7jj/how_to_install_a_custom_block_page_for_websites/) Reddit post which was incredibly useful
 * *imap-tools* python package, found [here at pypi](https://pypi.org/project/imap-tools/), used for processing emails
