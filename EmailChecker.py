@@ -8,7 +8,7 @@ import os
 # gets list of email subjects from INBOX folder
 with MailBox('imap.example.com').login("someone@example.com", "PASSWORD", initial_folder='INBOX') as mailbox:
     body = [msg.text for msg in mailbox.fetch(AND(subject='Domain Blocked'))]
-    print(body)
+    #print(body)
     # Checkes if the folder PiHoleWhitelist exists
     folder_exists = mailbox.folder.exists('PiHoleWhitelist')
     # if it does not exist, create it
