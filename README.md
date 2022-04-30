@@ -41,7 +41,7 @@ If using Gmail and you have 2 Facter Authentication setup, do these steps. Other
 
 ## Step 4: Set up the Repo and Install
 On the Raspberry Pi, Clone this repository:
-### `git clone https://github.com/BennyThePythonCoder/Pihole-404.git`
+### `git clone https://github.com/pythoncoder8888/Pihole-404.git`
 Navigate to the project folder:
 ### `cd Pihole-404`
 or wherever the repo folder was installed if you installed it in a different location.\
