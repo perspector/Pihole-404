@@ -4,7 +4,7 @@ A nice custom 404 page for pihole with an added automatic script that can be use
 
 ![This is what your 404 page will look like. Of course, you can also customize it.](./Screenshot.png)
 _^Above: This is what your 404 page will look like! Of course, feel free to customize it._
-
+#### Note: This is an unofficial third-party addon for your pi-hole.
 ## Table of Contents
 *   [The Problem](#the-problem)
 *   [The Solution](#the-solution)
