@@ -27,7 +27,7 @@ _^Above: This is what your 404 page will look like! Of course, feel free to cust
 To get your pihole up and running (haha), head over to [https://github.com/pi-hole/pi-hole](https://github.com/pi-hole/pi-hole)
 
 ## Step 2: (Gmail users only) Enable Less Secure App Access and IMAP
-If you are using an email provider other than Gmail, skip to [step 4](#step-4-set-up-the-repo-and-install)
+If you are using an email provider other than Gmail, skip to [step 4](#step-4-set-up-the-repo-and-install).\
 If you are using Gmail, you need to enable less secure app access to your google account [here](https://myaccount.google.com/lesssecureapps). You also need to enable IMAP, if it is not already enabled [here](https://mail.google.com/mail/u/0/#settings/fwdandpop). Scroll down to **IMAP Access** and make sure **Status** is set to **Enable IMAP**. I am not sure about other providers as I have not tried them.
 
 ## Step 3: (Gmail users who use 2FA only) Add an App Password to Use Instead of your Google Account Password
