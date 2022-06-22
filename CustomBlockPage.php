@@ -4,7 +4,7 @@
 <center>
 <body bgcolor=000000 text=FFFFFF style="background-image: url('/pihole/background.jpg'); background-repeat: no-repeat; background-size: cover;">
    <center>
-      <img src="pihole/Astronaut1.png" width=150><br>
+      <img src="pihole/foreground.png" width=150><br>
       <font size=+8 face="monoid">
          <strong>404</strong><br>
       </font>
