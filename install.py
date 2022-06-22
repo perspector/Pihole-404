@@ -50,7 +50,7 @@ file_exists = os.path.exists('credentials.txt')
 if file_exists:
     redo_setup = input("""
     Configuration file credentials.txt found.
-    Would you like to use previous settings (P)? Or would you like to redo the setup (R)? (P/R)
+    Would you like to use previous settings (P)? Or would you like to redo the setup (R)? (P/R) 
     """)
 else:
     redo_setup = "r"
@@ -66,22 +66,25 @@ if file_exists == False or redo_setup in r_strings:
     email = input("Please enter your email for the script: ")
     password = input("Please enter your email password: ")
     provider = input("What email provider do you use? (gmail/outlook/aol/yahoo/other) ")
-
+    provider = provider.lower()
     if provider == "gmail":
         provider = 'imap.gmail.com'
-    if provider == "outlook":
+    elif provider == "outlook":
         provider = 'imap-outlook.com'
-    if provider == "aol":
+    elif provider == "aol":
         provider = 'imap.aol.com'
-    if provider == "yahoo":
+    elif provider == "yahoo":
         provider = 'imap.yahoo.com'
-    if provider == "other":
+    elif provider == "other":
         print("Please look at https://www.systoolsgroup.com/imap/\n\n")
         provider = input('''
         If your provider was listed there, then please input the IMAP address of the provider.
         If it was not there, then use a search engine to find the IMAP address of your provider.
         Please type the IMAP address here (for example imap.gmail.com for Gmail):
         ''')
+    else:
+        print("Invalid provider specified. Quitting...")
+        exit()
     email = email.strip('\n')
     password = password.strip('\n')
     provider = provider.strip('\n')
@@ -92,13 +95,6 @@ if file_exists == False or redo_setup in r_strings:
     rewrite(php_file, 21, f"      <a href='mailto:{email}?subject=Domain%20Blocked&body=[sub]' onclick='this.href =this.href.replace(\"[sub]\",window.location)' target='_blank' rel=noopener noreferrer><button style='background-color:white; border-color:white'>here</button></a>.<br>\n")
     rewrite(email_file, 9, f"with MailBox('{provider}').login('{email}', '{password}', initial_folder='INBOX') as mailbox:\n")
     print("[✓] Finished adding credentials to files")
-
-    # Create credentials.txt for future setups
-    with open('credentials.txt', 'w') as credentials_file:
-        credentials_file.truncate() # clears the file, avoids errors/problems
-        # actually adds updated credentials to the file
-        credentials_file.write(f"{email}\n{password}\n{provider}\n")
-        credentials_file.close()
 
     # Copy webpage PHP file to correct location
     os.system('sudo cp CustomBlockPage.php /var/www/html/pihole/CustomBlockPage.php')
@@ -139,6 +135,39 @@ if file_exists == False or redo_setup in r_strings:
         os.system(f'echo "BLOCKINGMODE=IP" | sudo tee -a {FTL_file}')
     # Restarts the pihole-FTL service to apply changes
     os.system('sudo service pihole-FTL restart')
+    
+    try:
+        with open('credentials.txt', 'r') as credentials_file:
+            email = credentials_file.readline()
+            password = credentials_file.readline()
+            provider = credentials_file.readline()
+            run_on_boot = credentials_file.readline()
+            credentials_file.close()
+    except:
+        pass
+    
+    if run_on_boot != "True":
+        run_on_boot = input('Would you like the EmailChecker program to run on boot? (Y/n) ')
+        
+        if run_on_boot in {'Y', 'y', 'Yes', 'yes', 'YES'}:
+            run_on_boot = True
+            print('[...] Adding line to /etc/rc.local for running EmailChecker program on boot')
+            with open('/etc/rc.local', 'w') as rc_local:
+                rc_local.append('while true; do python3 EmailChecker.py ; sleep 10; done &')
+                rc_local.close()
+            print('[✓] EmailChecker program will automatically run on next boot')
+        else:
+            run_on_boot = False
+    else:
+        print('[✓] Script has already been configured to run EmailChecker program on boot')
+    
+    # Create credentials.txt for future setups
+    with open('credentials.txt', 'w') as credentials_file:
+        credentials_file.truncate() # clears the file, avoids errors/problems
+        # actually adds updated credentials to the file
+        credentials_file.write(f"{email}\n{password}\n{provider}\n{run_on_boot}\n")
+        credentials_file.close()
+    
     # Start Email Checker program in background, make it check email every 10 seconds
     os.system('while true; do python3 EmailChecker.py ; sleep 10; done &')
     print("[✓] Setup complete\n")
@@ -153,6 +182,7 @@ elif redo_setup in p_strings:
         email = credentials_file.readline()
         password = credentials_file.readline()
         provider = credentials_file.readline()
+        run_on_boot = credentials_file.readline()
         credentials_file.close()
     email = email.strip('\n')
     password = password.strip('\n')
