@@ -144,21 +144,21 @@ if file_exists == False or redo_setup in r_strings:
             run_on_boot = credentials_file.readline()
             credentials_file.close()
     except:
-        run_on_boot = ""
+        run_on_boot = "False"
         pass
     
     if run_on_boot != "True":
         run_on_boot = input('Would you like the EmailChecker program to run on boot? (Y/n) ')
         
         if run_on_boot in {'Y', 'y', 'Yes', 'yes', 'YES'}:
-            run_on_boot = True
+            run_on_boot = "True"
             print('[...] Adding line to /etc/rc.local for running EmailChecker program on boot')
             with open('/etc/rc.local', 'a') as rc_local:
-                rc_local.write('while true; do python3 EmailChecker.py ; sleep 10; done &')
+                rc_local.write('while true; do python3 /home/*/Pihole-404/EmailChecker.py ; sleep 10; done &')
                 rc_local.close()
             print('[✓] EmailChecker program will automatically run on next boot')
         else:
-            run_on_boot = False
+            run_on_boot = "False"
     else:
         print('[✓] Script has already been configured to run EmailChecker program on boot')
     
