@@ -76,8 +76,8 @@ Then go to the folder you cloned this repo in using `cd` Type:
 ### `watch -n 10 python3 EmailChecker.py &`
 
 This will start the program in the background.\
-Any time you shutdown or restart, you also must run this command.\
-If the Raspberry Pi updates, you will need to run the installer script again. The program now edits /etc/lighttpd/external.conf to preserve changes.\
+If you did **not** setup run on boot in the installer script, when you shutdown or restart, you also must run this command.\
+If the Raspberry Pi updates, you may need to run the installer script again. The program now edits /etc/lighttpd/external.conf to preserve changes.\
 The installer script should fix this.
 
 ### _Note: This script sets blocking mode to IP blocking. If you want to change this, just edit /etc/pihole/pihole-FTL.conf and set blocking mode to something else (anything other than IP will disable the 404 page). This is explained in depth [here](https://docs.pi-hole.net/ftldns/blockingmode/)_
