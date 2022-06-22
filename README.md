@@ -4,7 +4,7 @@ A nice custom 404 page for pihole with an added automatic script that can be use
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/d9d7b44d12f84133801d4de53057d276)](https://www.codacy.com/gh/pythoncoder8888/Pihole-404/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=BennyThePythonCoder/Pihole-404&amp;utm_campaign=Badge_Grade)
 
 ![This is what your 404 page will look like. Of course, you can also customize it.](./Screenshot.png)
-_^Above: This is what your 404 page will look like! Of course, feel free to customize it._
+_Above: This is what your 404 page will look like! Of course, feel free to customize it._
 
 #### Note: This is an unofficial third-party addon for your pi-hole.
 
