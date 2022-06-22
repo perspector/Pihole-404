@@ -17,7 +17,7 @@ _^Above: This is what your 404 page will look like! Of course, feel free to cust
 *   [Credits](#credits)
 
 ## The Problem
-&emsp; Setting up a Pihole is awesome and pretty easy. But what happens when a page you want to go to is blocked? You get a boring 404 error. And what if you want to go to the webpage? First, you have to go to your pihole's website. Then you have to login. Next, you need to go to whitelist and type in the domain. This is great, but what if you don't know the password or a client has problems?
+&emsp; Setting up a Pihole is awesome and pretty easy. But what happens when a page you want to go to is blocked? You get a regular 404 error. And what if you want to go to the webpage? First, you have to go to your pihole's website. Then you have to login. Next, you need to go to whitelist and type in the domain. This works if the user is the administrator, but what if you don't know the password or a client has problems?
 
 ## The Solution
 &emsp; Pihole-404 to the rescue! This simple script will add a button that lets you email the admin. This email will be read by an automatic python script and the domain will be whitelisted! And on top of all that, it makes the 404 page look very nice!\
@@ -67,6 +67,11 @@ The installer script should fix this.
 Sorry to see you go. If you want to uninstall the programs and restore settings before the script was used, just use the following command:
 ### `sudo sh uninstall.sh`
 Please email me at [bennypythoncoder@gmail.com](mailto:bennypythoncoder@gmail.com?subject=Why%20I%20uninstalled%20Pihole-404) to tell me why you chose to uninstall the programs.
+
+## Customizing
+You can always replace [background.jpg](https://github.com/pythoncoder8888/Pihole-404/blob/main/background.jpg) with another file (must have same filename).\
+You can also replace [foreground.png](https://github.com/pythoncoder8888/Pihole-404/blob/main/foreground.png) with another file (must also have the same filename).\
+The [CustomBlockPage.php] file can be changed to whatever you want (must also have the same filename).
 
 ## Credits
 *   Everyone at [pi-hole](https://pi-hole.net) ([Github](https://github.com/pi-hole/pi-hole))
