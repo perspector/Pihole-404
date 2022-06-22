@@ -84,7 +84,7 @@ The installer script should fix this.
 
 ## Uninstalling
 
-Sorry to see you go. If you want to uninstall the programs and restore settings before the script was used, just use the following command:
+If you want to uninstall the programs and restore settings before the script was used, just use the following command:
 
 ### `sudo sh uninstall.sh`
 
