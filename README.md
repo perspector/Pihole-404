@@ -62,7 +62,7 @@ Run the installer script (as root):
 
 ### `sudo python3 install.py`
 
-When you are asked for a password, enter your email password. If you use Google/Gmail and have 2 Facter Authentication set up, paste the app password from earlier here using `Ctrl + Shift + V`\
+When you are asked for a password, enter your email password. If you use Google/Gmail and have 2 Facter Authentication set up, paste the app password from earlier ([Step 3](https://github.com/pythoncoder8888/Pihole-404#step-3-gmail-users-who-use-2fa-only-add-an-app-password-to-use-instead-of-your-google-account-password)) here using `Ctrl + Shift + V`\
 Test the script here: http://doubleclick.net \
 You should get a 404 page like the screenshot above.
 
