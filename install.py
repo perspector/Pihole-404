@@ -153,8 +153,8 @@ if file_exists == False or redo_setup in r_strings:
         if run_on_boot in {'Y', 'y', 'Yes', 'yes', 'YES'}:
             run_on_boot = True
             print('[...] Adding line to /etc/rc.local for running EmailChecker program on boot')
-            with open('/etc/rc.local', 'w') as rc_local:
-                rc_local.append('while true; do python3 EmailChecker.py ; sleep 10; done &')
+            with open('/etc/rc.local', 'a') as rc_local:
+                rc_local.write('while true; do python3 EmailChecker.py ; sleep 10; done &')
                 rc_local.close()
             print('[✓] EmailChecker program will automatically run on next boot')
         else:
