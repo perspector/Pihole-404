@@ -138,12 +138,13 @@ if file_exists == False or redo_setup in r_strings:
     
     try:
         with open('credentials.txt', 'r') as credentials_file:
-            email = credentials_file.readline()
-            password = credentials_file.readline()
-            provider = credentials_file.readline()
+            credentials_file.readline()
+            credentials_file.readline()
+            credentials_file.readline()
             run_on_boot = credentials_file.readline()
             credentials_file.close()
     except:
+        run_on_boot = ""
         pass
     
     if run_on_boot != "True":
