@@ -8,6 +8,7 @@ if [ "$confirmation" = "y" ];then
   sudo rm /var/www/html/pihole/background.jpg
   sudo sed -i -e 's?CustomBlockPage.php?index.php?g' /etc/lighttpd/lighttpd.conf
   sudo service lighttpd restart
+  sudo sed -i -e 's?while true; do python3 /home/*/Pihole-404/EmailChecker.py ; sleep 10; done &? ?g' /etc/rc.local
   
   FILE=/etc/pihole/pihole-FTL.conf
   if [ -f "$FILE" ]; then
