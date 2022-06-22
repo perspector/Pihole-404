@@ -99,7 +99,7 @@ if file_exists == False or redo_setup in r_strings:
     # Copy webpage PHP file to correct location
     os.system('sudo cp CustomBlockPage.php /var/www/html/pihole/CustomBlockPage.php')
     os.system('sudo chmod +x /var/www/html/pihole/CustomBlockPage.php')
-    os.system('sudo cp Astronaut1.png /var/www/html/pihole/Astronaut1.png')
+    os.system('sudo cp foreground.png /var/www/html/pihole/foreground.png')
     os.system('sudo cp background.jpg /var/www/html/pihole/background.jpg')
     print('[✓] Webpage PHP file is located at /var/www/html/pihole/CustomBlockPage.php  Feel free to edit!')
     # Changes the default 404 page to the custom page found in /var/www/html/pihole/
