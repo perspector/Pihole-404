@@ -32,11 +32,11 @@ ______   _ _           _               ___ _____    ___
 | |     | | | | | (_) | |  __/      \___  | |_/ |\___  |
 \_|     |_|_| |_|\___/|_|\___|          |_/\____/    |_/
 
-By pythoncoder8888
+By perspector
 
-Repo can be found at (https://github.com/pythoncoder8888/Pihole-404)
+Repo can be found at (https://github.com/perspector/Pihole-404)
 Thanks to pi-hole (pi-hole.net) (https://github.com/pi-hole/pi-hole)
-Other credits can be found at (https://github.com/pythoncoder8888/Pihole-404#credits)
+Other credits can be found at (https://github.com/perspector/Pihole-404#credits)
 """)
 # Waits 5 seconds, then clears the screen
 time.sleep(5)
