@@ -33,7 +33,7 @@ To get your pihole up and running (haha), head over to [https://github.com/pi-ho
 
 ## Step 2: (Gmail users only) Enable Less Secure App Access and IMAP
 
-If you are using an email provider other than Gmail, skip to [step 4](#step-4-set-up-the-repo-and-install).\
+&emsp; If you are using an email provider other than Gmail, skip to [step 4](#step-4-set-up-the-repo-and-install).\
 If you are using Gmail, you need to enable less secure app access to your google account [here](https://myaccount.google.com/lesssecureapps). You also need to enable IMAP, if it is not already enabled [here](https://mail.google.com/mail/u/0/#settings/fwdandpop). Scroll down to **IMAP Access** and make sure **Status** is set to **Enable IMAP**. I am not sure about other providers as I have not tried them.
 
 ## Step 3: (Gmail users who use 2FA only) Add an App Password to Use Instead of your Google Account Password
@@ -50,16 +50,22 @@ If using Gmail and you have 2 Facter Authentication setup, do these steps. Other
 
 On the Raspberry Pi, Clone this repository:
 
-### `git clone https://github.com/perspector/Pihole-404.git`
+```
+git clone https://github.com/perspector/Pihole-404.git
+```
 
 Navigate to the project folder:
 
-### `cd Pihole-404`
+```
+cd Pihole-404
+```
 
 or wherever the repo folder was installed if you installed it in a different location.\
 Run the installer script (as root):
 
-### `sudo python3 install.py`
+```
+sudo python3 install.py
+```
 
 When you are asked for a password, enter your email password. If you use Google/Gmail and have 2 Facter Authentication set up, paste the app password from earlier ([Step 3](https://github.com/perspector/Pihole-404#step-3-gmail-users-who-use-2fa-only-add-an-app-password-to-use-instead-of-your-google-account-password)) here using `Ctrl + Shift + V`\
 Test the script here: http://doubleclick.net \
@@ -72,7 +78,9 @@ You should get a 404 page like the screenshot above.
 If this happens, just log on to the Raspberry Pi through HDMI and a keyboard.\
 Then go to the folder you cloned this repo in using `cd` Type:
 
-### `watch -n 10 python3 EmailChecker.py &`
+```
+watch -n 10 python3 EmailChecker.py &
+```
 
 This will start the program in the background.\
 If you did **not** setup run on boot in the installer script, when you shutdown or restart, you also must run this command.\
@@ -85,15 +93,17 @@ The installer script should fix this.
 
 If you want to uninstall the programs and restore settings before the script was used, just use the following command:
 
-### `sudo sh uninstall.sh`
+```
+sudo sh uninstall.sh
+```
 
 Please email me at [bennypythoncoder@gmail.com](mailto:bennypythoncoder@gmail.com?subject=Why%20I%20uninstalled%20Pihole-404) to tell me why you chose to uninstall the programs.
 
 ## Customizing
 
-You can always replace [background.jpg](https://github.com/pythoncoder8888/Pihole-404/blob/main/background.jpg) with another file (must have same filename).\
-You can also replace [foreground.png](https://github.com/pythoncoder8888/Pihole-404/blob/main/foreground.png) with another file (must also have the same filename).\
-The [CustomBlockPage.php] file can be changed to whatever you want (must also have the same filename).
+You can always replace [background.jpg](https://github.com/perspector/Pihole-404/blob/main/background.jpg) with another file (must have same filename).\
+You can also replace [foreground.png](https://github.com/perspector/Pihole-404/blob/main/foreground.png) with another file (must also have the same filename).\
+The [CustomBlockPage.php](https://github.com/perspector/Pihole-404/blob/main/CustomBlockPage.php) file can be changed to whatever you want (must also have the same filename).
 
 ## Credits
 
